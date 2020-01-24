@@ -5,7 +5,7 @@ using namespace std;
 int wordcount()
 {
     ifstream fin;
-    fin.open("lorem.txt");
+    fin.open("shakespeare1.txt");
     string data;
     long int Count=0;
     while(fin.eof()!=1)
