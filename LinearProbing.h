@@ -1,18 +1,18 @@
 #include<iostream>
 #include <fstream>
 #include<string>
-#include"Word Count.cpp"
+#include"Word Count.h"
 using namespace std;
 
 const unsigned int tablesize =30000;
 const int prime = 22277;
 
-class DoubleHash
+class Hash
 {
    public:
    string hashtable [tablesize];
-   int Freq[tablesize]={0};
-   int CNT=0;
+   int Freq[tablesize]={0};//frequency
+   int CNT=0;//Count Number of entries(unique)
     void Insert(string key)
     {
         int index=hash1(key);
@@ -20,7 +20,6 @@ class DoubleHash
         {
             if(check(index,key))
             {
-                int index2=hash2(key);
                 int newindex = index;
                 int i = 1;
                 while (i < tablesize)
@@ -49,7 +48,8 @@ class DoubleHash
         }
     }
 
-    bool check(int index, string key)//Check for Repeated word
+    //Check for Repeated word
+    bool check(int index, string key)
     {
         if(key.compare(hashtable[index])==0)
         {
@@ -60,6 +60,7 @@ class DoubleHash
         return 1;
     }
 
+    //Display Hash Table
     void display()
     {
         cout << endl << "Keys in the Hash Table:" << endl;
@@ -76,14 +77,10 @@ class DoubleHash
         }
     }
 
+    //Hash Function
     int hash1(string key)
     {
         return key[0] % tablesize;
-    }
-
-    int hash2(string key)
-    {
-        return prime - (key[0] %prime);
     }
 };
 

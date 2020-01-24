@@ -50,8 +50,7 @@ void merge(int arr[],std::string arrs[], int l, int m, int r)
         k++;
     }
 
-    /* Copy the remaining elements of L[], if there
-       are any */
+    /* Copy the remaining elements of L[], if there are any */
     while (i < n1)
     {
         arr[k] = L[i];
@@ -60,8 +59,7 @@ void merge(int arr[],std::string arrs[], int l, int m, int r)
         k++;
     }
 
-    /* Copy the remaining elements of R[], if there
-       are any */
+    /* Copy the remaining elements of R[], if there are any */
     while (j < n2)
     {
         arr[k] = R[j];
@@ -71,8 +69,7 @@ void merge(int arr[],std::string arrs[], int l, int m, int r)
     }
 }
 
-/* l is for left index and r is right index of the
-   sub-array of arr to be sorted */
+/* l is for left index and r is right index of the sub-array of arr to be sorted */
 void mergeSort(int arr[],std::string arrs[], int l, int r)
 {
     if (l < r)
@@ -89,7 +86,6 @@ void mergeSort(int arr[],std::string arrs[], int l, int r)
     }
 }
 
-/* UTILITY FUNCTIONS */
 /* Function to print an array */
 //void printArray(int A[],std::string As[], int size)
 //{
